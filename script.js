@@ -430,19 +430,25 @@ setInterval(
 
 function finalSurprise() {
 
-    const secret =
-        document.getElementById("finalSecret");
+    const secret = document.getElementById("finalSecret");
 
     secret.classList.add("show");
 
     launchConfetti(220);
 
-    for (let i = 0; i < 12; i++) {
-
+    // Create lots of floating hearts
+    for (let i = 0; i < 20; i++) {
         setTimeout(() => {
-
             createFloatingHeart();
-
         }, i * 120);
     }
+
+    // Extra celebration after the message appears
+    setTimeout(() => {
+        launchConfetti(120);
+    }, 1200);
+
+    setTimeout(() => {
+        launchConfetti(120);
+    }, 2400);
 }
