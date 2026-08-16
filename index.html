@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <title>A Little Surprise For You ❤️</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background Decorations -->
+    <div class="background-hearts"></div>
+    <div class="sparkles"></div>
+
+    <!-- Main Website -->
+    <main class="app">
+
+        <!-- =========================
+             STEP 1 — WELCOME
+        ========================== -->
+
+        <section class="screen active" id="screen1">
+
+            <div class="glass-card">
+
+                <div class="small-label">
+                    A little surprise for you ✨
+                </div>
+
+                <div class="heart-icon">
+                    ❤️
+                </div>
+
+                <h1 class="love-title">
+                    Hey My Dear SHONA ❤️...
+                </h1>
+
+                <p class="main-text">
+    I made something special just for you.
+    But before you see everything...
+</p>
+
+<p class="cute-text">
+    you have a tiny mission to complete. 👀💕
+</p>
+
+                <button
+                    class="primary-btn"
+                    onclick="nextScreen()"
+                >
+                    I'm Ready ❤️
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STEP 2 — HEART GAME
+        ========================== -->
+
+        <section class="screen" id="screen2">
+
+            <div class="glass-card">
+
+                <div class="small-label">
+                    LEVEL 1 💕
+                </div>
+
+                <h2 class="section-title">
+    Can You Catch My Heart? 💗
+</h2>
+
+<p class="main-text">
+    There's only one little heart here that belongs to you.
+</p>
+
+<p class="cute-text">
+    Catch it 5 times to unlock your surprise. 😌
+</p>
+
+                <div class="heart-game" id="heartGame">
+
+                    <div class="score">
+                        ❤️ <span id="score">0</span> / 5
+                    </div>
+
+                    <button
+                        id="catchHeart"
+                        class="game-heart"
+                    >
+                        ❤️
+                    </button>
+
+                </div>
+
+                <p
+                    id="gameMessage"
+                    class="game-message"
+                >
+                    Let's see if you can catch it... 😌
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STEP 3 — GIFT
+        ========================== -->
+
+        <section class="screen" id="screen3">
+
+            <div class="glass-card">
+
+                <div class="small-label">
+                    LEVEL 2 🎁
+                </div>
+
+                <h2 class="section-title">
+                    A Little Gift
+                </h2>
+
+                <p class="main-text">
+                    Something is waiting for you.
+                </p>
+
+                <div
+                    class="gift-container"
+                    onclick="openGift()"
+                >
+
+                    <div class="gift-box">
+
+                        <div class="gift-lid"></div>
+
+                        <div class="gift-ribbon-vertical"></div>
+
+                        <div class="gift-ribbon-horizontal"></div>
+
+                    </div>
+
+                </div>
+
+                <p
+    id="giftMessage"
+    class="hidden-message"
+>
+    You thought the gift was inside the box? 👀
+    <br><br>
+    Nope...
+    <br>
+    The real gift is this little piece of my heart
+    that I made just for you. ❤️
+</p>
+                <button
+                    id="giftNext"
+                    class="primary-btn hidden"
+                    onclick="nextScreen()"
+                >
+                    There's More ✨
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STEP 4 — PERSONAL MESSAGE
+        ========================== -->
+
+        <section class="screen" id="screen4">
+
+            <div class="glass-card">
+
+                <div class="small-label">
+                    JUST FOR YOU 💌
+                </div>
+
+                <<h2 class="section-title">
+    A Few Things From My Heart 💌
+</h2>
+
+                <div class="message-box">
+
+                    <p id="typingMessage"></p>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    onclick="nextMessage()"
+                >
+                    Tell Me More ❤️
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STEP 5 — MEMORIES
+        ========================== -->
+
+        <section class="screen" id="screen5">
+
+            <div class="glass-card">
+
+                <div class="small-label">
+                    OUR LITTLE WORLD 📸
+                </div>
+
+                <h2 class="section-title">
+                    Memories I Love
+                </h2>
+
+                <div class="memory-card">
+
+                    <div class="photo-placeholder">
+                        📸
+                    </div>
+
+                    <h3>
+                        A Moment To Remember
+                    </h3>
+
+                    <p>
+                        This is where one of our
+                        favorite memories will live. ❤️
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    onclick="nextScreen()"
+                >
+                    More Memories ✨
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STEP 6 — QUIZ
+        ========================== -->
+
+        <section class="screen" id="screen6">
+
+            <div class="glass-card">
+
+                <div class="small-label">
+                    LEVEL 3 😌
+                </div>
+
+                <h2 class="section-title">
+                    How Well Do You Know Us?
+                </h2>
+
+                <p class="quiz-question">
+                    What's the best thing about us?
+                </p>
+
+                <div class="quiz-options">
+
+                    <button onclick="quizAnswer(this)">
+                        Our laughs 😂
+                    </button>
+
+                    <button onclick="quizAnswer(this)">
+                        Our memories ❤️
+                    </button>
+
+                    <button onclick="quizAnswer(this)">
+                        Our craziness 😭
+                    </button>
+
+                    <button onclick="quizAnswer(this)">
+                        Everything 🥹
+                    </button>
+
+                </div>
+
+                <p
+                    id="quizResult"
+                    class="quiz-result"
+                ></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STEP 7 — CAKE
+        ========================== -->
+
+        <section class="screen" id="screen7">
+
+            <div class="glass-card">
+
+                <div class="small-label">
+                    ONE LAST THING 🕯️
+                </div>
+
+                <h2 class="section-title">
+                    Make A Wish
+                </h2>
+
+                <p class="main-text">
+                    Close your eyes for a second...
+                </p>
+
+                <p class="cute-text">
+                    Make a beautiful wish. 🌙
+                </p>
+
+                <div class="cake">
+
+                    <div
+                        class="flame"
+                        id="flame"
+                    ></div>
+
+                    <div class="candle"></div>
+
+                    <div class="cake-top"></div>
+
+                    <div class="cake-base"></div>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    onclick="blowCandle()"
+                >
+                    Blow Out The Candle 🕯️
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STEP 8 — FINAL
+        ========================== -->
+
+        <section class="screen" id="screen8">
+
+            <div class="final-card">
+
+                <div class="final-hearts">
+                    💕 💗 💕
+                </div>
+
+                <p class="small-label">
+                    TODAY IS YOUR DAY ✨
+                </p>
+
+                <h1 class="final-title">
+    Happy Birthday
+</h1>
+
+<h2 class="final-love">
+    My Favorite Person ❤️
+</h2>
+
+<p class="final-subtitle">
+    Today, tomorrow, and every day after...
+</p>
+
+                <div class="final-message">
+
+                    <p>
+                        Today isn't just about celebrating
+                        another year of your life.
+                    </p>
+
+                    <p>
+                        It's about celebrating the person
+                        you are and all the happiness you
+                        bring into my life.
+                    </p>
+
+                    <p>
+                        I hope this year brings you
+                        beautiful moments, big dreams,
+                        endless happiness and everything
+                        your heart wishes for.
+                    </p>
+
+                    <p class="special-line">
+                        I'm so lucky to have you. ❤️
+                    </p>
+
+                </div>
+
+                <div class="final-animation">
+                    ✨ ❤️ ✨
+                </div>
+
+                <button
+    class="secret-btn"
+    onclick="finalSurprise()"
+>
+    One Last Little Surprise... 🎁
+</button>
+
+<div
+    id="finalSecret"
+    class="final-secret"
+>
+    <div class="secret-heart">
+        ❤️
+    </div>
+
+    <p>
+        If I could give you one thing today...
+    </p>
+
+    <strong>
+        I would give you the chance to see yourself
+        through my eyes.
+    </strong>
+
+    <p>
+        Then you'd finally understand
+        just how special you are to me. 🥹❤️
+    </p>
+</div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
